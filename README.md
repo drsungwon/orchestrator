@@ -1,11 +1,10 @@
-# 자동 평가 파이프라인 오케스트레이터 (Orchestrator v5.0 - Poetry Edition)
+# 자동 평가 파이프라인 오케스트레이터 
+
+## (Orchestrator v5.0 - Poetry Edition)
 
 이 프로젝트는 여러 독립적인 평가 도구들을 체계적으로 연결하여 학생들의 코딩 제출물을 자동으로 평가하는 강력한 **Poetry 기반** 오케스트레이션 애플리케이션입니다.
 
 단일 명령 실행만으로 **(1)사전 분석**, **(2)개별 병렬 처리(복호화, 코드 복원, 일치도 검사, 과정 분석)**, **(3)최종 리포팅**의 복잡한 파이프라인을 완벽하게 자동화합니다.
-
-![Pipeline Diagram](https://placehold.co/800x200?text=Parallel%20Processing%20(Decrypt%20%E2%86%92%20Restore%20%E2%86%92%20Compare%20%E2%86%92%20Analyze)%20%E2%86%92%20Report&font=roboto)
-*(추후 실제 파이프라인 다이어그램 이미지로 교체 권장)*
 
 ---
 
