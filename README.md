@@ -1,6 +1,6 @@
 # 자동 평가 파이프라인 오케스트레이터 
 
-## (Orchestrator v5.0 - Poetry Edition)
+Orchestrator v5.0 - Poetry Edition
 
 이 프로젝트는 여러 독립적인 평가 도구들을 체계적으로 연결하여 학생들의 코딩 제출물을 자동으로 평가하는 강력한 **Poetry 기반** 오케스트레이션 애플리케이션입니다.
 
