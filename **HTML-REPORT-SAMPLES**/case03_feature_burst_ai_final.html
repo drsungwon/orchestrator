@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>동적 앙상블 개발 과정 평가 보고서 - case03_feature_burst_ai_final.txt</title>
+<style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #f5f5f5; }
+    .container { max-width: 1200px; margin: 0 auto; background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    h1 { color: #2c3e50; text-align: center; border-bottom: 3px solid #3498db; padding-bottom: 10px; }
+    h2 { color: #34495e; border-left: 4px solid #3498db; padding-left: 15px; margin-top: 30px; }
+    h3 { color: #2c3e50; margin-top: 25px; }
+    .summary-table, .expert-table { width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .summary-table th, .summary-table td, .expert-table th, .expert-table td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+    .summary-table th, .expert-table th { background-color: #3498db; color: white; font-weight: bold; }
+    .summary-table tr:nth-child(even), .expert-table tr:nth-child(even) { background-color: #f9f9f9; }
+    .summary-table tr:hover, .expert-table tr:hover { background-color: #f1f1f1; }
+    ul { padding-left: 20px; } li { margin: 8px 0; }
+    blockquote { border-left: 4px solid #3498db; margin: 20px 0; padding: 10px 20px; background-color: #ecf0f1; font-style: italic; }
+    hr { border: none; border-top: 2px solid #bdc3c7; margin: 30px 0; }
+    code { background-color: #ecf0f1; padding: 2px 6px; border-radius: 3px; font-family: 'Courier New', monospace; }
+    strong { color: #2c3e50; }
+    .report-info { background-color: #ecf0f1; padding: 15px; border-radius: 5px; margin: 20px 0; border-left: 4px solid #3498db; }
+    .report-info h4 { margin-top: 0; color: #2c3e50; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>🔍 동적 앙상블 개발 과정 평가 보고서</h1>
+<div class="report-info">
+<h4>📋 보고서 정보</h4>
+<p><strong>분석 대상:</strong> case03_feature_burst_ai_final.txt</p>
+<p><strong>생성 시간:</strong> 2025-08-15 17:15:45</p>
+<p><strong>분석 패턴:</strong> CRAMMING_AI (🔥 소수의 커밋으로 대량의 코드가 한 번에 추가됨)</p>
+<p><strong>최종 점수:</strong> 36/100</p>
+</div>
+<h2>1️⃣ 종합 분석 요약</h2>
+<table class="summary-table">
+<tr><th>구분</th><th>결과</th></tr>
+<tr><td><strong>🏁 최종 평가 점수</strong></td><td><code>36/100점</code></td></tr>
+<tr><td><strong>🧠 핵심 진단 패턴</strong></td><td>CRAMMING_AI (🔥 소수의 커밋으로 대량의 코드가 한 번에 추가됨)</td></tr>
+<tr><td><strong>🤝 전문가 합의도</strong></td><td>보통 (분석 모델 간 의견 부분 일치)</td></tr>
+<tr><td><strong>📈 성공률</strong></td><td>100.0%</td></tr>
+<tr><td><strong>❌ 실패한 모델</strong></td><td>없음</td></tr>
+<tr><td><strong>σ 표준편차</strong></td><td>21.65</td></tr>
+</table>
+<h2>2️⃣ 세부 진단 결과</h2>
+<h3>🎯 전문가 평가 현황</h3>
+<table class="expert-table">
+<tr><th>평가 모델</th><th>가중치</th><th>점수</th><th>평가</th><th>핵심 의견</th></tr>
+<tr><td><strong>HAS</strong></td><td>21.0%</td><td>49점</td><td>🟠 보통</td><td>하이브리드 평가 보통. 일부 축에서 AI 패턴 의심</td></tr>
+<tr><td><strong>UPA-A</strong></td><td>12.0%</td><td>55점</td><td>🟠 보통</td><td>일부 축에서 문제점 발견. AI 활용 의심이나 개발 과정상 개선 필요</td></tr>
+<tr><td><strong>UPA-G</strong></td><td>12.0%</td><td>5점</td><td>🔴 매우 부정적</td><td>게이트키퍼에서 비정상 패턴 감지. AI 생성 코드 강력 의심</td></tr>
+<tr><td><strong>UPA-QA</strong></td><td>12.0%</td><td>38점</td><td>🔴 부정적</td><td>게이트키퍼에서 비정상 패턴 감지. AI 생성 코드 강력 의심</td></tr>
+<tr><td><strong>RSA-ai.studio</strong></td><td>11.0%</td><td>72점</td><td>🟡 긍정적</td><td>대체로 긍정적이며 일부 개선 여지가 있음</td></tr>
+<tr><td><strong>DPA</strong></td><td>10.0%</td><td>24점</td><td>🔴 부정적</td><td>킬러 규칙 발동. 초기 대규모 변경이나 벼락치기 패턴 감지</td></tr>
+<tr><td><strong>CPA</strong></td><td>7.0%</td><td>5점</td><td>🔴 매우 부정적</td><td>게이트키퍼에서 벼락치기 감지. 베이즈 추론으로 AI 생성 강력 의심</td></tr>
+<tr><td><strong>RSA-claude</strong></td><td>5.0%</td><td>42점</td><td>🟠 보통</td><td>보통 수준. 개선해야 할 부분이 다수 확인됨</td></tr>
+<tr><td><strong>Qwen</strong></td><td>5.0%</td><td>3점</td><td>🔴 매우 부정적</td><td>강력한 AI 의심 신호. 초기 코드 집중, 대규모 커밋 등 비정상 패턴</td></tr>
+<tr><td><strong>RSA-gemini</strong></td><td>5.0%</td><td>11점</td><td>🔴 매우 부정적</td><td>매우 부정적 평가. 기본기와 과정 전면 재정비 권장</td></tr>
+
+</table>
+<hr/>
+<h2>3️⃣ 주요 증거 및 해석</h2><h3>⚠️ <strong>증거 1</strong>: AI 활용 의심 패턴</h3><ul><li><strong>관련 모델</strong>: HAS, UPA</li><li><strong>현상</strong>: 개발 과정에서 AI 생성 코드의 특징적 패턴 감지</li><li><strong>해석</strong>: AI에 과도하게 의존한 정황</li></ul>
+<hr/>
+<h2>4️⃣ 개선을 위한 권고사항</h2><h3>🤖 <strong>권고 1</strong>: AI 활용 방식 개선</h3><p><strong>💡 What</strong>: AI는 시작점, 최종 결과는 자신의 사고 과정을 반영</p><p><strong>🛠️ How</strong>: AI 제안 후 자신만의 해결책 개발, 과정 커밋 로그에 기록</p>
+<hr/>
+<blockquote><p>📌 다음 개발 시에는 권고사항을 참고하여 단계별로 진행해보세요. 작은 변화가 큰 성장을 만듭니다!</p></blockquote>
+</div>
+</body>
+</html>
