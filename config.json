@@ -1,0 +1,30 @@
+{
+  "directories": {
+    "student_submission": "student_submission",
+    "tools": "tools",
+    "output_base": "output",
+    "processed_outputs": "processed_outputs",
+    "report": "report"
+  },
+  "tools": {
+    "decoder_project": "mission-decoder",
+    "restore_project": "mission-restore",
+    "diff_script": "loose-diff/ldiff.py",
+    "duplicate_finder": "bin/duplicate_finder",
+    "inspector": "bin/inspector",
+    "private_key": "mission-decoder.keys/private_key.pem"
+  },
+  "student_file_structure": {
+    "log_dir": "src/mission_python/log",
+    "log_encrypted": "log.encrypted",
+    "signature_encrypted": "signature.encrypted",
+    "original_main_py": "src/mission_python/main.py"
+  },
+  "output_files": {
+    "report_csv": "evaluation_report.csv",
+    "log_decrypted": "log.decrypted",
+    "signature_decrypted": "signature.decrypted",
+    "log_restored": "log_restored.py",
+    "inspection_report_html": "inspection_report.html"
+  }
+}

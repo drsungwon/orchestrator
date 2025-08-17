@@ -1,0 +1,145 @@
+2025-08-17 17:59:43,371 [INFO] [MainThread] - 🚀 전체 파이프라인 오케스트레이터 시작...
+2025-08-17 17:59:43,371 [INFO] [MainThread] - Inspector 분석 시간: 10분
+2025-08-17 17:59:43,373 [INFO] [MainThread] - 리포트 파일 위치: work/output/report/evaluation_report.csv
+2025-08-17 17:59:43,373 [INFO] [MainThread] - ============================================================
+2025-08-17 17:59:43,373 [INFO] [MainThread] - 모든 도구의 의존성 확인 및 준비를 시작합니다...
+2025-08-17 17:59:43,373 [INFO] [MainThread] - 'mission-decoder' 프로젝트 의존성 확인 및 준비 중...
+2025-08-17 17:59:43,375 [INFO] [MainThread] -   실행: poetry install (최초 실행 시 시간이 걸릴 수 있습니다)...
+2025-08-17 17:59:43,911 [INFO] [MainThread] - 'mission-decoder' 의존성 준비 완료.
+2025-08-17 17:59:43,911 [INFO] [MainThread] - 'mission-restore' 프로젝트 의존성 확인 및 준비 중...
+2025-08-17 17:59:43,911 [INFO] [MainThread] -   실행: poetry install (최초 실행 시 시간이 걸릴 수 있습니다)...
+2025-08-17 17:59:44,339 [INFO] [MainThread] - 'mission-restore' 의존성 준비 완료.
+2025-08-17 17:59:44,339 [INFO] [MainThread] - ============================================================
+2025-08-17 17:59:44,339 [INFO] [MainThread] - 사전 분석: 중복된 암호화 로그 파일(.encrypted)을 검색합니다...
+2025-08-17 17:59:44,340 [INFO] [MainThread] - 실행 파일 실행: duplicate_finder
+2025-08-17 17:59:44,340 [INFO] [MainThread] -   실행 명령어: tools/bin/duplicate_finder
+2025-08-17 17:59:44,340 [INFO] [MainThread] -   실행 위치: tools/bin
+2025-08-17 17:59:44,340 [INFO] [MainThread] -   * --root-folder: student_submission
+2025-08-17 17:59:44,340 [INFO] [MainThread] -   * --file-filter: tools/bin/log.encrypted
+2025-08-17 17:59:44,347 [INFO] [MainThread] - 완료: duplicate_finder
+2025-08-17 17:59:44,347 [INFO] [MainThread] - 1개의 중복 그룹을 찾았습니다.
+2025-08-17 17:59:44,347 [INFO] [MainThread] - ============================================================
+2025-08-17 17:59:44,347 [INFO] [MainThread] - 개별 학생 제출물에 대한 병렬 파이프라인 처리를 시작합니다...
+2025-08-17 17:59:44,350 [INFO] [ThreadPoolExecutor-0_0] - 📂 처리 시작: student-01
+2025-08-17 17:59:44,350 [INFO] [ThreadPoolExecutor-0_1] - 📂 처리 시작: student-02
+2025-08-17 17:59:44,350 [INFO] [ThreadPoolExecutor-0_2] - 📂 처리 시작: student-03-deplicated_01
+2025-08-17 17:59:44,350 [INFO] [ThreadPoolExecutor-0_0] - --- student-01: 단계 A (복호화) ---
+2025-08-17 17:59:44,350 [INFO] [ThreadPoolExecutor-0_1] - --- student-02: 단계 A (복호화) ---
+2025-08-17 17:59:44,350 [INFO] [ThreadPoolExecutor-0_2] - --- student-03-deplicated_01: 단계 A (복호화) ---
+2025-08-17 17:59:44,350 [INFO] [ThreadPoolExecutor-0_0] - Poetry 프로젝트 실행: mission-decoder
+2025-08-17 17:59:44,350 [INFO] [ThreadPoolExecutor-0_1] - Poetry 프로젝트 실행: mission-decoder
+2025-08-17 17:59:44,350 [INFO] [ThreadPoolExecutor-0_2] - Poetry 프로젝트 실행: mission-decoder
+2025-08-17 17:59:44,789 [INFO] [ThreadPoolExecutor-0_1] -   실행 명령어: [venv: mission-decoder] python -m mission_decoder.main
+2025-08-17 17:59:44,789 [INFO] [ThreadPoolExecutor-0_2] -   실행 명령어: [venv: mission-decoder] python -m mission_decoder.main
+2025-08-17 17:59:44,789 [INFO] [ThreadPoolExecutor-0_0] -   실행 명령어: [venv: mission-decoder] python -m mission_decoder.main
+2025-08-17 17:59:44,789 [INFO] [ThreadPoolExecutor-0_1] -   * 대상 파일: student_submission/student-02/src/mission_python/log/log.encrypted
+2025-08-17 17:59:44,790 [INFO] [ThreadPoolExecutor-0_2] -   * 대상 파일: student_submission/student-03-deplicated_01/src/mission_python/log/log.encrypted
+2025-08-17 17:59:44,790 [INFO] [ThreadPoolExecutor-0_0] -   * 대상 파일: student_submission/student-01/src/mission_python/log/log.encrypted
+2025-08-17 17:59:44,791 [INFO] [ThreadPoolExecutor-0_0] -   * 개인 키: tools/mission-decoder.keys/private_key.pem
+2025-08-17 17:59:44,791 [INFO] [ThreadPoolExecutor-0_0] -   * 출력 파일: work/output/processed_outputs/student-01/log.decrypted
+2025-08-17 17:59:44,791 [INFO] [ThreadPoolExecutor-0_0] -   실행 위치: tools/mission-decoder
+2025-08-17 17:59:44,791 [INFO] [ThreadPoolExecutor-0_1] -   * 개인 키: tools/mission-decoder.keys/private_key.pem
+2025-08-17 17:59:44,792 [INFO] [ThreadPoolExecutor-0_1] -   * 출력 파일: work/output/processed_outputs/student-02/log.decrypted
+2025-08-17 17:59:44,792 [INFO] [ThreadPoolExecutor-0_1] -   실행 위치: tools/mission-decoder
+2025-08-17 17:59:44,793 [INFO] [ThreadPoolExecutor-0_2] -   * 개인 키: tools/mission-decoder.keys/private_key.pem
+2025-08-17 17:59:44,793 [INFO] [ThreadPoolExecutor-0_2] -   * 출력 파일: work/output/processed_outputs/student-03-deplicated_01/log.decrypted
+2025-08-17 17:59:44,793 [INFO] [ThreadPoolExecutor-0_2] -   실행 위치: tools/mission-decoder
+2025-08-17 17:59:44,946 [INFO] [ThreadPoolExecutor-0_0] - 완료: mission-decoder
+2025-08-17 17:59:44,946 [INFO] [ThreadPoolExecutor-0_1] - 완료: mission-decoder
+2025-08-17 17:59:44,946 [INFO] [ThreadPoolExecutor-0_2] - 완료: mission-decoder
+2025-08-17 17:59:44,947 [INFO] [ThreadPoolExecutor-0_0] - Poetry 프로젝트 실행: mission-decoder
+2025-08-17 17:59:44,947 [INFO] [ThreadPoolExecutor-0_1] - Poetry 프로젝트 실행: mission-decoder
+2025-08-17 17:59:44,947 [INFO] [ThreadPoolExecutor-0_2] - Poetry 프로젝트 실행: mission-decoder
+2025-08-17 17:59:45,384 [INFO] [ThreadPoolExecutor-0_0] -   실행 명령어: [venv: mission-decoder] python -m mission_decoder.main
+2025-08-17 17:59:45,384 [INFO] [ThreadPoolExecutor-0_2] -   실행 명령어: [venv: mission-decoder] python -m mission_decoder.main
+2025-08-17 17:59:45,384 [INFO] [ThreadPoolExecutor-0_0] -   * 대상 파일: student_submission/student-01/src/mission_python/log/signature.encrypted
+2025-08-17 17:59:45,384 [INFO] [ThreadPoolExecutor-0_1] -   실행 명령어: [venv: mission-decoder] python -m mission_decoder.main
+2025-08-17 17:59:45,384 [INFO] [ThreadPoolExecutor-0_1] -   * 대상 파일: student_submission/student-02/src/mission_python/log/signature.encrypted
+2025-08-17 17:59:45,384 [INFO] [ThreadPoolExecutor-0_0] -   * 개인 키: tools/mission-decoder.keys/private_key.pem
+2025-08-17 17:59:45,384 [INFO] [ThreadPoolExecutor-0_1] -   * 개인 키: tools/mission-decoder.keys/private_key.pem
+2025-08-17 17:59:45,385 [INFO] [ThreadPoolExecutor-0_2] -   * 대상 파일: student_submission/student-03-deplicated_01/src/mission_python/log/signature.encrypted
+2025-08-17 17:59:45,385 [INFO] [ThreadPoolExecutor-0_1] -   * 출력 파일: work/output/processed_outputs/student-02/signature.decrypted
+2025-08-17 17:59:45,385 [INFO] [ThreadPoolExecutor-0_0] -   * 출력 파일: work/output/processed_outputs/student-01/signature.decrypted
+2025-08-17 17:59:45,385 [INFO] [ThreadPoolExecutor-0_1] -   실행 위치: tools/mission-decoder
+2025-08-17 17:59:45,385 [INFO] [ThreadPoolExecutor-0_0] -   실행 위치: tools/mission-decoder
+2025-08-17 17:59:45,387 [INFO] [ThreadPoolExecutor-0_2] -   * 개인 키: tools/mission-decoder.keys/private_key.pem
+2025-08-17 17:59:45,387 [INFO] [ThreadPoolExecutor-0_2] -   * 출력 파일: work/output/processed_outputs/student-03-deplicated_01/signature.decrypted
+2025-08-17 17:59:45,387 [INFO] [ThreadPoolExecutor-0_2] -   실행 위치: tools/mission-decoder
+2025-08-17 17:59:45,510 [INFO] [ThreadPoolExecutor-0_1] - 완료: mission-decoder
+2025-08-17 17:59:45,510 [INFO] [ThreadPoolExecutor-0_0] - 완료: mission-decoder
+2025-08-17 17:59:45,510 [INFO] [ThreadPoolExecutor-0_2] - 완료: mission-decoder
+2025-08-17 17:59:45,510 [INFO] [ThreadPoolExecutor-0_1] - --- student-02: 단계 B (코드 복원) ---
+2025-08-17 17:59:45,510 [INFO] [ThreadPoolExecutor-0_0] - --- student-01: 단계 B (코드 복원) ---
+2025-08-17 17:59:45,510 [INFO] [ThreadPoolExecutor-0_2] - --- student-03-deplicated_01: 단계 B (코드 복원) ---
+2025-08-17 17:59:45,510 [INFO] [ThreadPoolExecutor-0_1] - Poetry 프로젝트 실행: mission-restore
+2025-08-17 17:59:45,510 [INFO] [ThreadPoolExecutor-0_0] - Poetry 프로젝트 실행: mission-restore
+2025-08-17 17:59:45,510 [INFO] [ThreadPoolExecutor-0_2] - Poetry 프로젝트 실행: mission-restore
+2025-08-17 17:59:45,900 [INFO] [ThreadPoolExecutor-0_1] -   실행 명령어: [venv: mission-restore] python -m mission_restore.main
+2025-08-17 17:59:45,900 [INFO] [ThreadPoolExecutor-0_0] -   실행 명령어: [venv: mission-restore] python -m mission_restore.main
+2025-08-17 17:59:45,900 [INFO] [ThreadPoolExecutor-0_2] -   실행 명령어: [venv: mission-restore] python -m mission_restore.main
+2025-08-17 17:59:45,900 [INFO] [ThreadPoolExecutor-0_1] -   * 입력: work/output/processed_outputs/student-02/log.decrypted
+2025-08-17 17:59:45,901 [INFO] [ThreadPoolExecutor-0_2] -   * 입력: work/output/processed_outputs/student-03-deplicated_01/log.decrypted
+2025-08-17 17:59:45,901 [INFO] [ThreadPoolExecutor-0_1] -   * 출력: work/output/processed_outputs/student-02/log_restored.py
+2025-08-17 17:59:45,901 [INFO] [ThreadPoolExecutor-0_0] -   * 입력: work/output/processed_outputs/student-01/log.decrypted
+2025-08-17 17:59:45,901 [INFO] [ThreadPoolExecutor-0_1] -   실행 위치: tools/mission-restore
+2025-08-17 17:59:45,901 [INFO] [ThreadPoolExecutor-0_0] -   * 출력: work/output/processed_outputs/student-01/log_restored.py
+2025-08-17 17:59:45,901 [INFO] [ThreadPoolExecutor-0_2] -   * 출력: work/output/processed_outputs/student-03-deplicated_01/log_restored.py
+2025-08-17 17:59:45,902 [INFO] [ThreadPoolExecutor-0_0] -   실행 위치: tools/mission-restore
+2025-08-17 17:59:45,902 [INFO] [ThreadPoolExecutor-0_2] -   실행 위치: tools/mission-restore
+2025-08-17 17:59:45,926 [INFO] [ThreadPoolExecutor-0_0] - 완료: mission-restore
+2025-08-17 17:59:45,926 [INFO] [ThreadPoolExecutor-0_1] - 완료: mission-restore
+2025-08-17 17:59:45,926 [INFO] [ThreadPoolExecutor-0_2] - 완료: mission-restore
+2025-08-17 17:59:45,926 [INFO] [ThreadPoolExecutor-0_0] - --- student-01: 단계 C (일치도 검사) ---
+2025-08-17 17:59:45,927 [INFO] [ThreadPoolExecutor-0_1] - --- student-02: 단계 C (일치도 검사) ---
+2025-08-17 17:59:45,927 [INFO] [ThreadPoolExecutor-0_2] - --- student-03-deplicated_01: 단계 C (일치도 검사) ---
+2025-08-17 17:59:45,927 [INFO] [ThreadPoolExecutor-0_0] - Python 스크립트 실행: ldiff.py
+2025-08-17 17:59:45,927 [INFO] [ThreadPoolExecutor-0_1] - Python 스크립트 실행: ldiff.py
+2025-08-17 17:59:45,927 [INFO] [ThreadPoolExecutor-0_2] - Python 스크립트 실행: ldiff.py
+2025-08-17 17:59:45,927 [INFO] [ThreadPoolExecutor-0_1] -   실행 명령어: python tools/loose-diff/ldiff.py
+2025-08-17 17:59:45,927 [INFO] [ThreadPoolExecutor-0_0] -   실행 명령어: python tools/loose-diff/ldiff.py
+2025-08-17 17:59:45,927 [INFO] [ThreadPoolExecutor-0_2] -   실행 명령어: python tools/loose-diff/ldiff.py
+2025-08-17 17:59:45,927 [INFO] [ThreadPoolExecutor-0_1] -   * 파일 A: student_submission/student-02/src/mission_python/main.py
+2025-08-17 17:59:45,927 [INFO] [ThreadPoolExecutor-0_0] -   * 파일 A: student_submission/student-01/src/mission_python/main.py
+2025-08-17 17:59:45,927 [INFO] [ThreadPoolExecutor-0_2] -   * 파일 A: student_submission/student-03-deplicated_01/src/mission_python/main.py
+2025-08-17 17:59:45,927 [INFO] [ThreadPoolExecutor-0_1] -   * 파일 B: work/output/processed_outputs/student-02/log_restored.py
+2025-08-17 17:59:45,927 [INFO] [ThreadPoolExecutor-0_0] -   * 파일 B: work/output/processed_outputs/student-01/log_restored.py
+2025-08-17 17:59:45,927 [INFO] [ThreadPoolExecutor-0_2] -   * 파일 B: work/output/processed_outputs/student-03-deplicated_01/log_restored.py
+2025-08-17 17:59:45,947 [INFO] [ThreadPoolExecutor-0_0] - 완료: ldiff.py
+2025-08-17 17:59:45,947 [INFO] [ThreadPoolExecutor-0_1] - 완료: ldiff.py
+2025-08-17 17:59:45,947 [INFO] [ThreadPoolExecutor-0_2] - 완료: ldiff.py
+2025-08-17 17:59:45,947 [INFO] [ThreadPoolExecutor-0_0] - --- student-01: 단계 D (과정 분석) ---
+2025-08-17 17:59:45,947 [INFO] [ThreadPoolExecutor-0_1] - --- student-02: 단계 D (과정 분석) ---
+2025-08-17 17:59:45,947 [INFO] [ThreadPoolExecutor-0_2] - --- student-03-deplicated_01: 단계 D (과정 분석) ---
+2025-08-17 17:59:45,947 [INFO] [ThreadPoolExecutor-0_0] - 실행 파일 실행: inspector
+2025-08-17 17:59:45,947 [INFO] [ThreadPoolExecutor-0_2] - 실행 파일 실행: inspector
+2025-08-17 17:59:45,947 [INFO] [ThreadPoolExecutor-0_1] - 실행 파일 실행: inspector
+2025-08-17 17:59:45,948 [INFO] [ThreadPoolExecutor-0_2] -   실행 명령어: tools/bin/inspector
+2025-08-17 17:59:45,948 [INFO] [ThreadPoolExecutor-0_0] -   실행 명령어: tools/bin/inspector
+2025-08-17 17:59:45,948 [INFO] [ThreadPoolExecutor-0_1] -   실행 명령어: tools/bin/inspector
+2025-08-17 17:59:45,948 [INFO] [ThreadPoolExecutor-0_2] -   실행 위치: tools/bin
+2025-08-17 17:59:45,948 [INFO] [ThreadPoolExecutor-0_0] -   실행 위치: tools/bin
+2025-08-17 17:59:45,948 [INFO] [ThreadPoolExecutor-0_1] -   실행 위치: tools/bin
+2025-08-17 17:59:45,948 [INFO] [ThreadPoolExecutor-0_2] -   * --logfile: tools/bin/../../work/output/processed_outputs/student-03-deplicated_01/log.decrypted
+2025-08-17 17:59:45,948 [INFO] [ThreadPoolExecutor-0_0] -   * --logfile: tools/bin/../../work/output/processed_outputs/student-01/log.decrypted
+2025-08-17 17:59:45,948 [INFO] [ThreadPoolExecutor-0_1] -   * --logfile: tools/bin/../../work/output/processed_outputs/student-02/log.decrypted
+2025-08-17 17:59:45,948 [INFO] [ThreadPoolExecutor-0_2] -   * --duration: tools/bin/10
+2025-08-17 17:59:45,948 [INFO] [ThreadPoolExecutor-0_0] -   * --duration: tools/bin/10
+2025-08-17 17:59:45,948 [INFO] [ThreadPoolExecutor-0_1] -   * --duration: tools/bin/10
+2025-08-17 17:59:45,948 [INFO] [ThreadPoolExecutor-0_0] -   * --html-output: tools/bin/../../work/output/processed_outputs/student-01/inspection_report.html
+2025-08-17 17:59:45,948 [INFO] [ThreadPoolExecutor-0_2] -   * --html-output: tools/bin/../../work/output/processed_outputs/student-03-deplicated_01/inspection_report.html
+2025-08-17 17:59:45,948 [INFO] [ThreadPoolExecutor-0_1] -   * --html-output: tools/bin/../../work/output/processed_outputs/student-02/inspection_report.html
+2025-08-17 17:59:45,964 [INFO] [ThreadPoolExecutor-0_2] - 완료: inspector
+2025-08-17 17:59:45,964 [INFO] [ThreadPoolExecutor-0_0] - 완료: inspector
+2025-08-17 17:59:45,964 [INFO] [ThreadPoolExecutor-0_1] - 완료: inspector
+2025-08-17 17:59:45,964 [INFO] [ThreadPoolExecutor-0_2] - 서명 파일 분석: signature.decrypted
+2025-08-17 17:59:45,964 [INFO] [ThreadPoolExecutor-0_0] - 서명 파일 분석: signature.decrypted
+2025-08-17 17:59:45,964 [INFO] [ThreadPoolExecutor-0_1] - 서명 파일 분석: signature.decrypted
+2025-08-17 17:59:45,965 [INFO] [ThreadPoolExecutor-0_2] -   추출된 도시: Seongnam-si
+2025-08-17 17:59:45,965 [INFO] [ThreadPoolExecutor-0_1] -   추출된 도시: Seongnam-si
+2025-08-17 17:59:45,965 [INFO] [ThreadPoolExecutor-0_2] - 🏁 처리 완료: student-03-deplicated_01, 최종 상태: OK
+2025-08-17 17:59:45,965 [INFO] [ThreadPoolExecutor-0_0] -   추출된 도시: Seongnam-si
+2025-08-17 17:59:45,965 [INFO] [ThreadPoolExecutor-0_1] - 🏁 처리 완료: student-02, 최종 상태: OK
+2025-08-17 17:59:45,965 [INFO] [ThreadPoolExecutor-0_0] - 🏁 처리 완료: student-01, 최종 상태: OK
+2025-08-17 17:59:45,984 [INFO] [MainThread] - ============================================================
+2025-08-17 17:59:45,984 [INFO] [MainThread] - 🎉 모든 파이프라인 작업이 완료되었습니다.
+2025-08-17 17:59:45,984 [INFO] [MainThread] - 최종 리포트가 저장되었습니다: 'work/output/report/evaluation_report.csv'
