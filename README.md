@@ -1,14 +1,10 @@
-# 자동 평가 파이프라인 오케스트레이터 
+# 자동 평가 파이프라인 오케스트레이터
 
-![alt text](https://img.shields.io/badge/python-3.9+-blue.svg)
-
-![alt text](https://img.shields.io/badge/managed%20with-Poetry-blueviolet.svg)
-
-![alt text](https://img.shields.io/badge/project%20status-active-brightgreen.svg)
-
-![alt text](https://img.shields.io/badge/code%20style-black-000000.svg)
-
-![alt text](https://img.shields.io/badge/License-MIT-yellow.svg)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/release/python-390/)
+[![managed with Poetry](https://img.shields.io/badge/managed%20with-Poetry-blueviolet.svg)](https://python-poetry.org/)
+[![Project Status: Active](https://img.shields.io/badge/project%20status-active-brightgreen.svg)](https://www.repostatus.org/#active)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Orchestrator v5.0 - Poetry Edition
 
@@ -48,7 +44,7 @@ Orchestrator v5.0 - Poetry Edition
 ```
 project-root/
 ├── student_submission/           # (필수) 평가 대상 학생들의 프로젝트 폴더
-│   ├── student-01/               # (필수) 학생이 제출한 원본 코드
+│   ├── student-01/
 │   │   └── src/mission_python/main.py       
 │   │   └── src/mission_python/log/log.encrypted
 │   │   └── src/mission_python/log/signature.encrypted
@@ -56,27 +52,23 @@ project-root/
 │
 ├── tools/                        # (필수) 모든 분석 도구들이 위치하는 폴더
 │   ├── bin/                      # (권장) 컴파일된 실행 파일들을 모아두는 곳
-│   │   ├── duplicate_finder      # (필수)
-│   │   └── inspector             # (필수)
-│   │      └── configuration/
-│   │         └── weights.json    # (필수) inspector 가중치 파일
-│   ├── loose-diff/ldiff.py       # (필수) Python 프로그램
-│   ├── mission-decoder/          # (필수) Poetry 프로젝트
-│   ├── mission-restore/          # (필수) Poetry 프로젝트
+│   │   ├── duplicate_finder
+│   │   └── inspector
+│   ├── loose-diff/ldiff.py
+│   ├── mission-decoder/
+│   ├── mission-restore/
 │   └── mission-decoder.keys/
-│          └── private_key.pem    # (필수) 복호화용 개인 키
+│       └── private_key.pem
 │
-└── work/                         # (필수) 이 오케스트레이터 프로젝트 폴더
-    ├── orchestrator/             # 소스 코드 폴더
-    │   ├── __init__.py
-    │   └── main.py
-    ├── config.json               # (필수) 오케스트레이터 설정 파일
-    ├── pyproject.toml            # (필수) Poetry 프로젝트 정의 파일
-    ├── poetry.lock               # (필수) 의존성 버전 잠금 파일
-    └── output/                   # 실행 시 자동 생성
-        ├── processed_outputs/    # 학생별 중간/최종 산출물
-        └── report/               # 최종 CSV 리포트
-        └── orchestrator.log      # 상세 실행 로그 파일
+├── work/                         # (필수) 이 오케스트레이터 프로젝트 폴더
+│   ├── orchestrator/
+│   ├── config.json
+│   ├── pyproject.toml
+│   ├── poetry.lock
+│   └── output/                   # 실행 시 자동 생성
+│
+├── HTML-REPORT-SAMPLES/          # (참고) 최종 생성될 HTML 리포트 샘플
+└── MISSION-INSPECTOR-OVERALL/    # (참고) Mission Inspector 설명 논문
 ```
 
 ### 2. 시스템 요구사항
@@ -96,22 +88,13 @@ project-root/
 
 ```json
 {
-  "directories": { // 프로젝트의 주요 폴더 이름 정의
-    "student_submission": "student_submission",
-    "tools": "tools",
-    // ...
+  "directories": { // ...
   },
-  "tools": { // tools 폴더 내 각 도구의 상대 경로 정의
-    "decoder_project": "mission-decoder",
-    "duplicate_finder": "bin/duplicate_finder", // 실행 파일 위치
-    "inspector": "bin/inspector",               // 실행 파일 위치
-    // ...
+  "tools": { // ...
   },
-  "student_file_structure": { // 학생 제출물 폴더 내부의 구조 정의
-    // ...
+  "student_file_structure": { // ...
   },
-  "output_files": { // 오케스트레이터가 생성할 파일 이름 정의
-    // ...
+  "output_files": { // ...
   }
 }
 ```
@@ -128,7 +111,6 @@ project-root/
     ```
 
 2.  **Poetry를 사용하여 의존성을 설치합니다.**
-    이 명령은 `pyproject.toml`을 읽어 `tqdm`과 같은 오케스트레이터에 필요한 라이브러리를 격리된 가상 환경에 설치합니다.
     ```bash
     poetry install
     ```
@@ -146,7 +128,7 @@ project-root/
 
 ### 3. 실행 결과물 확인
 
--   **콘솔 출력**: 전체 진행 상황이 `tqdm` 진행률 표시줄을 통해 시각적으로 표시됩니다. 각 스레드의 상세 작업 내용은 로그 파일에 기록됩니다.
+-   **콘솔 출력**: 전체 진행 상황이 `tqdm` 진행률 표시줄을 통해 시각적으로 표시됩니다.
 
     ```
     Processing students: 100%|████████████| 15/15 [00:45<00:00,  3.00s/it]
@@ -157,14 +139,11 @@ project-root/
     | student_id | status | duplication\_group | process\_analysis\_score | location |
     | :--- | :--- | :--- | :--- | :--- |
     | student-01 | OK | UNIQUE | 95 | Seoul |
-    | student-02 | DIFFERENT | UNIQUE | 78 | Busan |
-    | student-03 | DECRYPT\_FAILED | A | NOT\_ANALYZED | FILE\_NOT\_FOUND |
     | ... | ... | ... | ... | ... |
 
--   **학생별 산출물**: `work/output/processed_outputs/` 폴더 아래에 각 학생 ID로 된 폴더가 생성되며, 복호화된 로그, 복원된 코드, 과정 분석 HTML 리포트 등 모든 중간/최종 산출물이 저장됩니다.
+-   **학생별 산출물**: `work/output/processed_outputs/` 폴더 아래에 각 학생 ID로 된 폴더가 생성되며, 복호화된 로그, 복원된 코드, 과정 분석 HTML 리포트 등 모든 중간/최종 산출물이 저장됩니다. 생성되는 HTML 리포트의 예시는 프로젝트 루트의 `HTML-REPORT-SAMPLES` 폴더에서 미리 확인해볼 수 있습니다.
 
 -   **상세 로그**: 파이프라인의 모든 세부 실행 과정, 경고, 오류는 `work/orchestrator.log`에 기록됩니다. 문제 발생 시 가장 먼저 확인해야 할 파일입니다.
-
 
 ---
 
@@ -179,3 +158,17 @@ project-root/
 | **`inspector`** | `"⏺︎ 최종 앙상블 점수: (\d+) / 100"` | 정규식을 사용하여 학생의 최종 개발 과정 점수를 추출 |
 
 만약 위 도구들의 업데이트로 인해 출력 텍스트가 변경된다면, 오케스트레이터의 해당 파싱 로직(`orchestrator/main.py` 내부)도 함께 수정해야 합니다.
+
+---
+
+## 🔗 관련 프로젝트 및 외부 도구
+
+이 오케스트레이션 파이프라인에서 사용하는 주요 외부 도구 및 프로젝트들은 다음과 같습니다:
+
+-   **[mission-python](https://github.com/drsungwon/mission-python)**: 평가 대상이 되는 학생 코딩 미션의 기본 구조입니다.
+-   **[mission-decoder](https://github.com/drsungwon/mission-decoder)**: 암호화된 로그와 서명 파일을 복호화하는 도구입니다.
+-   **[mission-restore](https://github.com/drsungwon/mission-restore)**: 복호화된 로그로부터 원본 소스 코드를 복원하는 도구입니다.
+-   **[loose-diff](https://github.com/drsungwon/loose-diff)**: 복원된 코드와 원본 코드를 실질적으로 비교하는 도구입니다.
+-   **[duplicate-finder](https://github.com/drsungwon/duplicate_finder)**: 제출된 로그 파일 간의 중복을 탐지하는 도구입니다.
+-   **[hybrid-encryption](https://github.com/drsungwon/hybrid_encryption)**: (참고: `mission-decoder` 등에서 사용되는 암호화 모듈)
+-   **MISSION-INSPECTOR-OVERALL**: `Mission Inspector`가 학생들의 개발 과정을 어떻게 정량적으로 평가하는지에 대한 상세 설명이 담긴 논문이 포함되어 있습니다.
