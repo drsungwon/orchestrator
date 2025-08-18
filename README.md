@@ -1,5 +1,15 @@
 # 자동 평가 파이프라인 오케스트레이터 
 
+![alt text](https://img.shields.io/badge/python-3.9+-blue.svg)
+
+![alt text](https://img.shields.io/badge/managed%20with-Poetry-blueviolet.svg)
+
+![alt text](https://img.shields.io/badge/project%20status-active-brightgreen.svg)
+
+![alt text](https://img.shields.io/badge/code%20style-black-000000.svg)
+
+![alt text](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 Orchestrator v5.0 - Poetry Edition
 
 이 프로젝트는 여러 독립적인 평가 도구들을 체계적으로 연결하여 학생들의 코딩 제출물을 자동으로 평가하는 강력한 **Poetry 기반** 오케스트레이션 애플리케이션입니다.
@@ -18,7 +28,7 @@ Orchestrator v5.0 - Poetry Edition
     1.  **복호화**: `mission-decoder`를 사용하여 암호화된 로그와 서명 파일을 복호화합니다.
     2.  **코드 복원**: `mission-restore`를 사용하여 복호화된 로그로부터 원본 소스 코드를 복원합니다.
     3.  **일치도 검사**: `loose-diff`를 사용하여 제출된 원본 코드와 복원된 코드의 실질적 동일성을 검증합니다.
-    4.  **과정 분석**: `inspector`를 사용하여 코드 개발 과정의 품질을 정량적인 점수로 평가합니다.
+    4.  **과정 분석**: `mission-inspector (a.k.a inspector)`를 사용하여 코드 개발 과정의 품질을 정량적인 점수로 평가합니다.
 -   **사전 중복 분석**: 전체 제출물을 대상으로 `duplicate-finder`를 실행하여 의심스러운 중복 로그 파일을 사전에 탐지하고 리포트에 그룹으로 표기합니다.
 -   **상세 리포팅 및 로깅**:
     -   **CSV 리포트**: 모든 분석 결과를 종합하여 `evaluation_report.csv` 파일로 깔끔하게 정리합니다.
