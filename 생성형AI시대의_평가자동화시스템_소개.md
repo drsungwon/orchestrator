@@ -184,7 +184,7 @@ project-root/
 [mission-decoder]: https://github.com/drsungwon/mission-decoder
 [mission-restore]: https://github.com/drsungwon/mission-restore
 [duplicate_finder]: https://github.com/drsungwon/duplicate_finder
-[Inspector]: https://github.com/drsungwon/inspector
+[Inspector]: https://github.com/drsungwon/orchestrator/tree/main/**MISSION-INSPECTOR-OVERALL**
 
 ### 10. 참고문헌 (References)
 [1] OpenAI, "GPT-4 Technical Report," *arXiv preprint arXiv:2303.08774*, 2023.
